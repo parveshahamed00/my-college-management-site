@@ -1,0 +1,25 @@
+{
+  "name": "college-website-management",
+  "version": "1.0.0",
+  "description": "\"management site for my-college website\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parveshahamed00/my-college-management-site.git"
+  },
+  "author": "Parvesh Ahamed. M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parveshahamed00/my-college-management-site/issues"
+  },
+  "homepage": "https://github.com/parveshahamed00/my-college-management-site#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
