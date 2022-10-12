@@ -3,10 +3,6 @@ const studentschema = new mongoose.Schema({
   name: String,
   age: Number,
 });
-// model -collections
-const student_data = mongoose.model("student", studentschema);
-// document
-exports.student = new student_data({
-  name: "Khan",
-  age: 8,
-});
+// model -collection-name
+exports.student_data = mongoose.model("student", studentschema);
+

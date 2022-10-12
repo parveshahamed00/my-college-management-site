@@ -1,5 +1,5 @@
 const express = require('express')
 const router=express.Router()
-const hello=require('../controllers/hello')
-router.get('/',hello.hello)
+const login_page=require('../controllers/login')
+router.get('/',login_page.login)
 module.exports =router
