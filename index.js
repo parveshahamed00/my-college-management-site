@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 require("dotenv").config(); // for environment variables
-app.use(bodyParser.urlencoded({extended:true})) // to handle post requests
+app.use(bodyParser.urlencoded({ extended: true })); // to handle post requests
 app.use(express.static("public"));
 app.set("view engine", "ejs"); // seting the engine for ejs
 const port = process.env.PORT;
@@ -20,13 +20,17 @@ async function connect() {
 }
 connect();
 // routes
+
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/login-post"));
-
-app.use("/", require("./routes/welcome"));
-
+// app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 // requiring-databse models
-const student = require("./models/test");
+// const admin=require('./models/admin-login-datails')
+// admin.admin_detail.find((err,docs)=>{
+//   if(!err){
+//     console.log(docs[0].password);
+//   }
+// })
 // student.student_data.find({name:"parvesh"},(err,docs)=>{
 //   if(!err){
 //     console.log(docs);
