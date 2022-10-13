@@ -48,6 +48,7 @@ app.use(
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/login-post"));
 app.use("/",require("./routes/home-page"))
+app.use("/",require("./routes/logout"))
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
