@@ -8,9 +8,10 @@ exports.login_post = (req, res) => {
       admin_data.admin_detail.findOne((err,docs)=>{
         if (!err) {
             if (docs.email===email && docs.password===password) {
-                res.sendFile(__dirname+"/index.html")
+
+                req.session.isAuth = true; // for saving cookie  
+                res.redirect('/home')
             } else {
-            //    alert("You are not Authorised to access this site ");
 
                         res.sendFile(__dirname + "/unauthorised.html");
 
@@ -19,11 +20,6 @@ exports.login_post = (req, res) => {
         }
       })
 
-//   res.redirect("/");
 };
 
-// -- Testine like admin is authenticated
-// const admin=require('../models/admin-login-datails')
-// exports.admin_details=(req,res)=>{
-//     console.log(req.body,email,req.body,password);
-// }
+
