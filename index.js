@@ -11,13 +11,14 @@ const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // public folder for css and images
 app.set("view engine", "ejs"); // seting the engine for ejs
-exports.isAuth=(req,res,next)=>{  // to protect pages before login
-if(req.session.isAuth){
-  next()
-}else{
-  res.redirect('/')
-}
-}
+exports.isAuth = (req, res, next) => {
+  // to protect pages before login
+  if (req.session.isAuth) {
+    next();
+  } else {
+    res.redirect("/");
+  }
+};
 // mongoDB connection
 const uri = process.env.mongoDB;
 async function connect() {
@@ -40,15 +41,18 @@ app.use(
     secret: "parvesh", // like key for lock to sign the cookie
     resave: false, // telling our server not to create new session for every request
     saveUninitialized: false, // no need of saving the session if it is not modified
-    store:store
+    store: store,
   })
 );
 // routes
 
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/login-post"));
-app.use("/",require("./routes/home-page"))
-app.use("/",require("./routes/logout"))
+app.use("/", require("./routes/home-page"));
+app.use("/", require("./routes/logout"));
+app.use("/", require("./routes/add-student"));
+app.use("/", require("./routes/add-student-post"));
+
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
