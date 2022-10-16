@@ -19,7 +19,7 @@ exports.addStudent = (req, res) => {
       res.sendStatus(500);
     } else {
       console.log("Scuessfully Saved to database");
-      res.sendFile(__dirname+"/add-success.html")
+      res.sendFile(__dirname+"/add-student-success.html")
     }
   });
   // console.log(req.body);
