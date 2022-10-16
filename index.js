@@ -2,7 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser"); // to handle post requests
 const mongoose = require("mongoose");
 const session = require("express-session"); // to create session and cookie for it
+const multer = require("multer"); // use to manage files which is uplaoded from frontend and stores it in file system
 const mongoDBsession = require("connect-mongodb-session")(session); // to store session in our mongodb
+
 const app = express();
 
 require("dotenv").config(); // for environment variables
@@ -11,14 +13,29 @@ const port = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // public folder for css and images
 app.set("view engine", "ejs"); // seting the engine for ejs
+
+
+
+const storage = multer.diskStorage({
+  // defines that where in our file system the image is going to store
+  destination: (req, file, cb) => {
+    cb(null,"student-images")
+  },
+  // renaming the original file name to student's rollnumber
+  filename:(req,file,cb)=>{
+cb(null,file.originalname)
+  }
+});
+exports.upload=multer({storage:storage}) // multer middlweare ,stores information related to storage
+// to protect pages before login
 exports.isAuth = (req, res, next) => {
-  // to protect pages before login
   if (req.session.isAuth) {
     next();
   } else {
     res.redirect("/");
   }
 };
+
 // mongoDB connection
 const uri = process.env.mongoDB;
 async function connect() {

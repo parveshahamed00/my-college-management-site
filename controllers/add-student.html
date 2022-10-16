@@ -23,7 +23,12 @@
   <body>
     <div class="container">
       <h1 class="py-3">Add Student to Database</h1>
-      <form action="/add-student" method="post" class="pt-4">
+      <form
+        action="/add-student"
+        method="post"
+        class="pt-4"
+        enctype="multipart/form-data"
+      >
         <div class="row">
           <div class="col-md-6 py-2">
             <div class="form-floating">
@@ -157,7 +162,12 @@
               <label for="Unpaid">Unpaid</label><br />
             </div>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-4 d-flex align-items-center">
+            <div>
+              <p>Student Image :</p>
+              <input type="file" name="image" required/>
+            </div>
+          </div>
         </div>
         <div class="my-3">
           <input type="checkbox" name="checkbox" required />

@@ -1,5 +1,4 @@
 const studentschema = require("../models/student-detail");
-
 exports.addStudent = (req, res) => {
   const student = new studentschema.student_data({
     name: req.body.name,
