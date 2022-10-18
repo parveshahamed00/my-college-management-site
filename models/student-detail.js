@@ -10,8 +10,10 @@ const studentschema = new mongoose.Schema({
   gender:String,
   department:String,
   address:String,
-  fees:String
+  fees:String,
+  imageURl:String,
 });
 // model -collection-name
 exports.student_data = mongoose.model("student", studentschema);
+
 

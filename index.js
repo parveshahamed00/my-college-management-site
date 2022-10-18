@@ -2,9 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser"); // to handle post requests
 const mongoose = require("mongoose");
 const session = require("express-session"); // to create session and cookie for it
-const multer = require("multer"); // use to manage files which is uplaoded from frontend and stores it in file system
-const mongoDBsession = require("connect-mongodb-session")(session); // to store session in our mongodb
+ const fileUplaod = require("express-fileupload");
 
+const mongoDBsession = require("connect-mongodb-session")(session); // to store session in our mongodb
 const app = express();
 
 require("dotenv").config(); // for environment variables
@@ -14,19 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // public folder for css and images
 app.set("view engine", "ejs"); // seting the engine for ejs
 
-
-
-const storage = multer.diskStorage({
-  // defines that where in our file system the image is going to store
-  destination: (req, file, cb) => {
-    cb(null,"student-images")
-  },
-  // renaming the original file name to student's rollnumber
-  filename:(req,file,cb)=>{
-cb(null,file.originalname)
-  }
-});
-exports.upload=multer({storage:storage}) // multer middlweare ,stores information related to storage
 // to protect pages before login
 exports.isAuth = (req, res, next) => {
   if (req.session.isAuth) {
@@ -61,14 +48,24 @@ app.use(
     store: store,
   })
 );
-// routes
 
+ app.use(
+   fileUplaod({
+     useTempFiles: true,
+   })
+ );
+
+
+
+// routes
 app.use("/", require("./routes/login"));
 app.use("/", require("./routes/login-post"));
 app.use("/", require("./routes/home-page"));
 app.use("/", require("./routes/logout"));
 app.use("/", require("./routes/add-student"));
 app.use("/", require("./routes/add-student-post"));
+app.use("/", require("./routes/delete-student"));
+
 
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 
