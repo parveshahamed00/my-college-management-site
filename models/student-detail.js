@@ -12,6 +12,7 @@ const studentschema = new mongoose.Schema({
   address:String,
   fees:String,
   imageURl:String,
+  imageName:String
 });
 // model -collection-name
 exports.student_data = mongoose.model("student", studentschema);

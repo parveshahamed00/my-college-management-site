@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser"); // to handle post requests
 const mongoose = require("mongoose");
 const session = require("express-session"); // to create session and cookie for it
- const fileUplaod = require("express-fileupload");
+const fileUplaod = require("express-fileupload");
 
 const mongoDBsession = require("connect-mongodb-session")(session); // to store session in our mongodb
 const app = express();
@@ -49,13 +49,11 @@ app.use(
   })
 );
 
- app.use(
-   fileUplaod({
-     useTempFiles: true,
-   })
- );
-
-
+app.use(
+  fileUplaod({
+    useTempFiles: true,
+  })
+);
 
 // routes
 app.use("/", require("./routes/login"));
@@ -65,7 +63,7 @@ app.use("/", require("./routes/logout"));
 app.use("/", require("./routes/add-student"));
 app.use("/", require("./routes/add-student-post"));
 app.use("/", require("./routes/delete-student"));
-
+app.use("/", require("./routes/delete-student-post"));
 
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 

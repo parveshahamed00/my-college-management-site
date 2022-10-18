@@ -24,7 +24,8 @@ exports.addStudent = (req, res) => {
       department: req.body.department,
       address: req.body.address,
       fees: req.body.fees,
-      imageURl:result.url
+      imageURl: result.url,
+      imageName: result.public_id
     });
     student.save(function (err, result) {
       if (err) {
