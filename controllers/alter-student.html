@@ -1,12 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-college | Management</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="images/logo/logo.jpeg"
+      type="image/x-icon"
+    />
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form
+        action="/add-student"
+        method="post"
+        class="pt-4"
+        enctype="multipart/form-data"
+      >
+        <div class="row border border-primary py-2 mb-5">
+          <div class="col-md-8 py-2">
+            <h1>Alter Student using Admission-No :</h1>
+          </div>
+          <div class="col-md-4 py-2">
+            <div class="form-floating">
+              <input
+                name="alter-admissionNo"
+                type="text"
+                class="form-control"
+                placeholder="example"
+              />
+              <label for="alter-admissionNo">Admission-No</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 py-2">
+            <div class="form-floating">
+              <input
+                name="name"
+                type="text"
+                class="form-control"
+                placeholder="example"
+              />
+              <label for="name">Name</label>
+            </div>
+          </div>
+          <div class="col-md-3 py-2">
+            <div class="form-floating">
+              <input
+                name="rollNo"
+                type="text"
+                class="form-control"
+                placeholder="example"
+              />
+              <label for="rollNo">Roll-No</label>
+            </div>
+          </div>
+          <div class="col-md-3 py-2">
+            <div class="form-floating">
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                placeholder="example"
+              />
+              <label for="email">Email-Address</label>
+            </div>
+          </div>
+          <div class="col-md-3 py-2">
+            <div class="form-floating">
+              <input
+                name="phoneNo"
+                type="text"
+                class="form-control"
+                pattern="[0-9]{10}"
+                placeholder="example"
+              />
+              <label for="phoneNo">Phone-No</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 py-2">
+            <div class="form-floating">
+              <input
+                name="age"
+                type="number"
+                class="form-control"
+                placeholder="example"
+                min="16"
+              />
+              <label for="age">Student's-Age</label>
+            </div>
+          </div>
+          <div class="col-md-3 py-2 d-flex justify-content-around">
+            <p>Gender :</p>
+            <div>
+              <input type="radio" name="gender" value="male" />
+              <label for="male">male</label><br />
+              <input type="radio" name="gender" value="female" />
+              <label for="female">female</label><br />
+            </div>
+          </div>
+          <div class="col-md-6 py-2">
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01"
+                >Department</label
+              >
+              <select
+                class="form-select"
+                id="inputGroupSelect01"
+                name="department"
+              >
+                <option selected>BSc Information Technology.</option>
+                <option value="1">BSc Computer Science.</option>
+                <option value="2">BSc Agriculture.</option>
+                <option value="3">BCA Bachelor of Computer Application.</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="floatingTextarea2"
+                style="height: 140px"
+                name="address"
+              ></textarea>
+              <label for="address">Address :</label>
+            </div>
+          </div>
+          <div
+            class="col-md-4 d-flex justify-content-around align-items-center"
+          >
+            <p>Fees :</p>
+            <div>
+              <input type="radio" name="fees" value="Paid" />
+              <label for="Paid">Paid</label><br />
+              <input type="radio" name="fees" value="Unpaid" />
+              <label for="Unpaid">Unpaid</label><br />
+            </div>
+          </div>
+          <div class="col-md-4 d-flex align-items-center">
+            <div>
+              <p>Student Image :</p>
+              <input type="file" name="image" />
+            </div>
+          </div>
+        </div>
+        <div class="my-3">
+          <input type="checkbox" name="checkbox" required />
+          <label for="checkbox">I agree to alter student</label>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">Add Student</button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
