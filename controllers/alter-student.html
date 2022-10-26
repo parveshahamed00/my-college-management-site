@@ -23,10 +23,9 @@
   <body>
     <div class="container">
       <form
-        action="/add-student"
+        action="/alter-student"
         method="post"
         class="pt-4"
-        enctype="multipart/form-data"
       >
         <div class="row border border-primary py-2 mb-5">
           <div class="col-md-8 py-2">
@@ -35,12 +34,12 @@
           <div class="col-md-4 py-2">
             <div class="form-floating">
               <input
-                name="alter-admissionNo"
+                name="alter_admissionNo"
                 type="text"
                 class="form-control"
                 placeholder="example"
               />
-              <label for="alter-admissionNo">Admission-No</label>
+              <label for="alter_admissionNo">Admission-No</label>
             </div>
           </div>
         </div>
@@ -155,12 +154,7 @@
               <label for="Unpaid">Unpaid</label><br />
             </div>
           </div>
-          <div class="col-md-4 d-flex align-items-center">
-            <div>
-              <p>Student Image :</p>
-              <input type="file" name="image" />
-            </div>
-          </div>
+          
         </div>
         <div class="my-3">
           <input type="checkbox" name="checkbox" required />

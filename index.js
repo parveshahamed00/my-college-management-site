@@ -65,6 +65,8 @@ app.use("/", require("./routes/add-student-post"));
 app.use("/", require("./routes/delete-student"));
 app.use("/", require("./routes/delete-student-post"));
 app.use("/",require("./routes/alter-student"))
+app.use("/", require("./routes/alter-student-post"));
+
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
