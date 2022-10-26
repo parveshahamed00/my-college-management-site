@@ -6,6 +6,7 @@ exports.alterStudent = (req, res) => {
     datas.name = req.body.name;
   }
   if (req.body.rollNo) {
+    
     datas.rollNo = lodash.toLower(req.body.rollNo);
   }
   if (req.body.email) {
