@@ -1,12 +1,12 @@
 const studentschema = require("../models/student-detail");
-
+ const lodash = require("lodash"); 
 exports.alterStudent = (req, res) => {
   const datas = {};
   if (req.body.name) {
     datas.name = req.body.name;
   }
   if (req.body.rollNo) {
-    datas.rollNo = req.body.rollNo;
+    datas.rollNo = lodash.toLower(req.body.rollNo);
   }
   if (req.body.email) {
     datas.email = req.body.email;
