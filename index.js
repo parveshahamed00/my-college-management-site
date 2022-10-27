@@ -66,6 +66,9 @@ app.use("/", require("./routes/delete-student"));
 app.use("/", require("./routes/delete-student-post"));
 app.use("/",require("./routes/alter-student"))
 app.use("/", require("./routes/alter-student-post"));
+app.use("/", require("./routes/attendance"));
+app.use("/",require("./routes/attendance-post"))
+
 
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
 
