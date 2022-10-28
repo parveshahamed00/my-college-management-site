@@ -24,6 +24,8 @@ exports.deteteStudent = (req, res) => {
     { admissionNo: req.body.admissionNo },
     function (err, docs) {
       if (err) {
+        res.sendStatus(500);
+
         console.log(err);
       } else {
         if (docs === null) {

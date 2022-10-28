@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 // scheme -structure
 const attendanceschema = new mongoose.Schema({
-attandance:Number,
+attendance:Number,
 name:String,
-department:String
+department:String,
+rollNo:String
 });
 // model -collection-name
-exports.attandance = mongoose.model("attandance", attendanceschema);
+exports.attendance = mongoose.model("attendance", attendanceschema);

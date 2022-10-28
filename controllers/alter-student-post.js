@@ -1,12 +1,11 @@
 const studentschema = require("../models/student-detail");
- const lodash = require("lodash"); 
+const lodash = require("lodash");
 exports.alterStudent = (req, res) => {
   const datas = {};
   if (req.body.name) {
     datas.name = req.body.name;
   }
   if (req.body.rollNo) {
-    
     datas.rollNo = lodash.toLower(req.body.rollNo);
   }
   if (req.body.email) {
@@ -49,6 +48,8 @@ exports.alterStudent = (req, res) => {
           res.sendFile(__dirname + "/alter-student-success.html");
         }
       } else {
+        res.sendStatus(500);
+
         console.log(err);
       }
     }
