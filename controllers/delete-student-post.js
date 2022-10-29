@@ -9,17 +9,7 @@ cloudinary.config({
   api_secret: "EL_fj8uawlC4yyVjJ4a0f-v6vzk",
 });
 exports.deteteStudent = (req, res) => {
-  //   studentschema.student_data.deleteOne({ damissionNo: req.body.admissionNo },(err,docs)=>{
-  //     if(!err)
-  //     {
-  //         res.sendStatus(404);
 
-  //         console.log("student scuessfully Deleted from database");
-  //     }
-  //     else{
-  //         console.log(err);
-  //     }
-  //   });
   studentschema.student_data.findOneAndRemove(
     { admissionNo: req.body.admissionNo },
     function (err, docs) {
