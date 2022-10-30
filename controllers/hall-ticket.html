@@ -38,7 +38,6 @@
                   name="rollNo"
                   type="text"
                   class="form-control"
-                  id="name"
                   placeholder="example"
                 />
                 <label for="rollNo">Student-RollNo</label>
@@ -52,7 +51,8 @@
                   type="number"
                   class="form-control no-of-subjects"
                   placeholder="example"
-                  min="2"
+                  value="1"
+                  min="1"
                   max="10"
                 />
                 <label for="totalSubjects">No of subjects</label>
@@ -112,22 +112,22 @@
           input_date.setAttribute("required", true);
           input_date.setAttribute("name", "date");
 
-          let input_subName = document.createElement("input");
-          input_subName.setAttribute("type", "text");
-          input_subName.setAttribute("required", true);
-          input_subName.setAttribute("name", "date");
-
           let input_subCode = document.createElement("input");
           input_subCode.setAttribute("type", "text");
           input_subCode.setAttribute("required", true);
-          input_subCode.setAttribute("name", "date");
+          input_subCode.setAttribute("name", "subCode");
+
+          let input_subName = document.createElement("input");
+          input_subName.setAttribute("type", "text");
+          input_subName.setAttribute("required", true);
+          input_subName.setAttribute("name", "subName");
 
           div_date.appendChild(input_date);
           contents.appendChild(div_date);
-          div_subName.appendChild(input_subName);
-          contents.appendChild(div_subName);
           div_subCode.appendChild(input_subCode);
           contents.appendChild(div_subCode);
+          div_subName.appendChild(input_subName);
+          contents.appendChild(div_subName);
         }
         let add_button = document.querySelector(".btn-primary");
         add_button.style.display = "unset";

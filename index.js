@@ -71,6 +71,8 @@ app.use("/", require("./routes/attendance-post"));
 app.use("/", require("./routes/time-table"));
 app.use("/", require("./routes/time-table-post"));
 app.use("/", require("./routes/hall-ticket"));
+app.use("/", require("./routes/hall-ticket-post"));
+
 
 
 // app.use('/',require('./routes/admin-login-post')) // --> for saving admin details
