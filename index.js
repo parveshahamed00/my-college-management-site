@@ -74,6 +74,8 @@ app.use("/", require("./routes/hall-ticket"));
 app.use("/", require("./routes/hall-ticket-post"));
 app.use("/", require("./routes/result"));
 app.use("/", require("./routes/result-post"));
+app.use("/", require("./routes/result-mark-post"));
+
 
 
 

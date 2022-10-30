@@ -30,6 +30,7 @@ exports.result = (req, res) => {
               } else {
                 //   console.log(docs);
                 res.render("result-mark", {
+                  rollNo:rollNo,
                   student: docs.name,
                   date: docs.date,
                   subCode: docs.subCode,
