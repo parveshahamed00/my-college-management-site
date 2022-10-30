@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-college | Management</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="images/logo/logo.jpeg"
+      type="image/x-icon"
+    />
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="py-5">Set Marks for Student using his/her Roll-No :-:</h1>
+      <form action="/result" method="post">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-floating">
+              <input
+                required
+                name="rollNo"
+                type="text"
+                class="form-control w-75"
+                placeholder="example"
+              />
+              <label for="rollNo">Roll-No</label>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 d-flex align-items-center mt-3 justify-content-end justify-content-sm-start"
+          >
+            <div>
+              <button type="submit" class="btn btn-dark">Proceed</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
