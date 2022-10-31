@@ -24,7 +24,7 @@ exports.isAuth = (req, res, next) => {
 };
 
 // mongoDB connection
-const uri = process.env.DATABASE_URL;
+const uri = process.env.mongoDB;
 async function connect() {
   try {
     await mongoose.connect(uri);
