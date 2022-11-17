@@ -17,6 +17,7 @@ exports.hallTicket = (req, res) => {
           imageURL: docs.imageURl,
           name: docs.name,
           rollNo: rollNo,
+          department:docs.department,
           date: req.body.date,
           subCode: req.body.subCode,
           subName: req.body.subName,

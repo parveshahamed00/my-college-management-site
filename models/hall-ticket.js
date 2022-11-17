@@ -4,6 +4,7 @@ const hallTicketschema = new mongoose.Schema({
   imageURL:String,
   name:String,
   rollNo:String,
+  department:String,
   date:Array,
   subCode:Array,
   subName:Array

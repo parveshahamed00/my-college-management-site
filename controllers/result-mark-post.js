@@ -12,6 +12,7 @@ exports.resultMarks = (req, res) => {
         imageURL: docs.imageURL,
         name: docs.name,
         rollNo: rollNo,
+        department:docs.department,
         date: docs.date,
         subCode: docs.subCode,
         subName: docs.subName,
